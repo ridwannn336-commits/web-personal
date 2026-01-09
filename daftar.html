@@ -3,25 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <title>Daftar Hadir</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #dbeeff; /* biru muda */
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: white;
+      width: 90%;
+      max-width: 900px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #1e3a8a;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f1f5ff;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: white;
+      background: #2563eb;
+      padding: 10px 20px;
+      border-radius: 6px;
+    }
+
+    a:hover {
+      background: #1e40af;
+    }
+  </style>
 </head>
 <body>
 
-<h2>Daftar Hadir Mahasiswa</h2>
+<div class="container">
+  <h2>Daftar Hadir Mahasiswa</h2>
 
-<table border="1" cellpadding="8">
-  <thead>
-    <tr>
-      <th>No</th>
-      <th>Nama</th>
-      <th>NIM</th>
-      <th>Waktu</th>
-    </tr>
-  </thead>
-  <tbody id="tabelAbsen"></tbody>
-</table>
+  <table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>NIM</th>
+        <th>Waktu</th>
+      </tr>
+    </thead>
+    <tbody id="tabelAbsen"></tbody>
+  </table>
 
-<br>
-<a href="index.html">Kembali ke Absensi</a>
+  <a href="index.html">⬅ Kembali ke Absensi</a>
+</div>
 
 <script>
 let dataAbsen = JSON.parse(localStorage.getItem("absensi")) || [];
