@@ -3,21 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <title>Absensi Mahasiswa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #dbeeff; /* biru muda terang */
+    }
+
+    .card {
+      background: white;
+      width: 100%;
+      max-width: 350px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      background: #4da3ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo span {
+      font-size: 40px;
+      color: white;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4da3ff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e88ff;
+    }
+
+    a {
+      display: block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #4da3ff;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
 
-<h2>Form Absensi</h2>
+  <div class="card">
 
-<label>Nama:</label><br>
-<input type="text" id="nama"><br>
+    <!-- Logo kepala & badan -->
+    <div class="logo">
+      <span>👤</span>
+    </div>
 
-<label>NIM:</label><br>
-<input type="text" id="nim"><br><br>
+    <h2>Form Absensi</h2>
 
-<button onclick="absen()">Absen</button>
-<br><br>
+    <label>Nama</label>
+    <input type="text" id="nama" placeholder="Masukkan nama">
 
-<a href="daftar.html">Lihat Daftar Hadir</a>
+    <label>NIM</label>
+    <input type="text" id="nim" placeholder="Masukkan NIM">
+
+    <button onclick="absen()">Absen</button>
+
+    <a href="daftar.html">Lihat Daftar Hadir</a>
+
+  </div>
 
 <script>
 function absen() {
