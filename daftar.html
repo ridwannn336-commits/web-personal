@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Hadir</title>
+</head>
+<body>
+
+<h2>Daftar Hadir Mahasiswa</h2>
+
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama</th>
+      <th>NIM</th>
+      <th>Waktu</th>
+    </tr>
+  </thead>
+  <tbody id="tabelAbsen"></tbody>
+</table>
+
+<br>
+<a href="index.html">Kembali ke Absensi</a>
+
+<script>
+let dataAbsen = JSON.parse(localStorage.getItem("absensi")) || [];
+const tabel = document.getElementById("tabelAbsen");
+
+dataAbsen.forEach((data, index) => {
+  const row = tabel.insertRow();
+  row.insertCell(0).innerText = index + 1;
+  row.insertCell(1).innerText = data.nama;
+  row.insertCell(2).innerText = data.nim;
+  row.insertCell(3).innerText = data.waktu;
+});
+</script>
+
+</body>
+</html>
